@@ -1,0 +1,29 @@
+.login-wrapper {
+  align-items: center;
+  .login-form-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    mat-form-field {
+      width: 100%;
+    }
+    .action-btn {
+      width: 100%;
+      margin-top: 2rem;
+      height: 3rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin-top: 1rem;
+      color: #0000ee;
+      cursor: pointer;
+    }
+  }
+}
+
+:host ::ng-deep .mat-form-field-wrapper {
+  margin: 0.2rem 0 !important;
+  padding: 0;
+}

@@ -1,0 +1,33 @@
+<div class="search-wrap">
+  <div class="search-header">
+    <mat-form-field appearance="outline">
+      <input
+        #search
+        matInput
+        placeholder="Search category or title"
+        (input)="searchFor(search.value, value)"
+      />
+    </mat-form-field>
+
+    <div class="price-filter">
+      <mat-slider
+        class="price-slider"
+        [max]="maxPrice"
+        [min]="minPrice"
+        [(ngModel)]="value"
+        (change)="searchFor(search.value, value)"
+        step="1"
+      >
+      </mat-slider>
+      <div class="price-text-wrap">
+        <p class="min-price">Lowest: ₹ {{ minPrice }}</p>
+        <p class="max-price">Highest: ₹ {{ value }}</p>
+      </div>
+    </div>
+  </div>
+  <h2>
+    {{title}}
+  </h2>
+  <app-product class="search-result" [title]="''" [products]="products"></app-product>
+
+</div>

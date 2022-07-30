@@ -1,0 +1,48 @@
+<div class="toolbar-wrapper">
+  <h1 (click)="handleNavigationEvents(homeEvent)">
+    {{ title }}
+  </h1>
+  <div class="toolbar-navigation">
+    <ul class="toolbar-navigation-ul">
+      <li
+        class="toolbar-navigation-li"
+        *ngFor="let navItem of navCollection"
+        (click)="handleNavigationEvents(navItem.event)"
+      >
+        {{ navItem.title | titlecase }}
+        <div
+          class="toolbar-navigation-sub-menu"
+          *ngIf="navItem.subUrls.length > 0"
+        >
+          <ul>
+            <li
+              *ngFor="let subUrl of navItem.subUrls"
+              (click)="
+                handleNavigationEvents(subUrl.event); $event.stopPropagation()
+              "
+            >
+              {{ subUrl.title | titlecase }}
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="toolbar-icons">
+    <div
+      class="toolbar-icon"
+      *ngFor="let navItem of navIcons"
+      (click)="handleNavigationEvents(navItem.event)"
+    >
+      <mat-icon
+        matBadge="{{ navItem.badgeCount }}"
+        matBadgeColor="warn"
+        [matBadgeHidden]="navItem.badgeCount < 1"
+        [matBadgeOverlap]="true"
+      >
+        {{ navItem.icon }}
+      </mat-icon>
+    </div>
+  </div>
+</div>

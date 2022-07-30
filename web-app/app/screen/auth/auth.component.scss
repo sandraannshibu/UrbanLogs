@@ -1,0 +1,16 @@
+.auth-content-wrapper {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  .auth-content {
+    width: 30%;
+    height: fit-content;
+  }
+}
+
+.auth-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

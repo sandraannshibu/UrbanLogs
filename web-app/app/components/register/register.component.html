@@ -1,0 +1,29 @@
+<div class="register-wrapper">
+    <div class="register-form-wrapper">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="John Doe" type="text" [formControl]="name" required/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="user@domain.com" type="email" [formControl]="email" required/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required/>
+                <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+      </mat-form-field>
+  
+      <button class="action-btn" (click)="registerUser()" mat-raised-button color="primary">Register</button>
+  
+      <p (click)="redirectToLoginScreen()">Already have an account? Click here to login</p>
+    </div>
+  </div>

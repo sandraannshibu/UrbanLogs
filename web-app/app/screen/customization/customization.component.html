@@ -1,0 +1,144 @@
+<h2>How to Choose the right Furniture ?</h2>
+<h2>Buying Guide for Sofa</h2>
+<h3>STEP 1: YOU WILL NEED TO CONSIDER THE ATTRIBUTES OF A SOFA</h3>
+<h4>The Kind Of A Sit You Require</h4>
+<p>
+A higher seating height in a Sofa, provides the ease of getting up, whereas a lower seating is more casual and relaxed. 
+Therefore, before making a decision, do keep in mind who is going to be using the Sofa - are they tall, short or older people? 
+The seating height of our Sofas vary in sit – from the very low ones having a seating
+ height of 8 inches to the taller variety going up to 24 inches. Though standard seating height is 18 inches.  
+</p>
+<h4>The Width You Need</h4>
+<p>The width of a Sofa plays an important criteria in decision making too. You’ll need to measure the available space in your lounge to decide whether 
+  it is the 3, 2, 1 seater or large sectionals that your room needs.
+</p>
+<h3>STEP 2: WEIGH IN THE PROS AND CONS FOR DIFFERENT SEATING TYPES</h3>
+<p>
+  For L-shaped sofa Just make sure that is it the RHS (right hand side ) or LHS (left hand side ) Sofa Sectional you require, so figure out where exactly 
+  are you going to place it and decide which L shape part of your home you plan to utilize
+</p>
+<p>
+  For Recliners,Make sure there is enough room at the back and front of the Sofa, so either the manually-operated or electrical mechanism allows it open up completely and recline backwards or the front, 
+  giving you ample space to stretch your feet.
+</p>
+<h3>STEP 3: THINK THROUGH THE FOLLOWING POINTERS</h3>
+<p>
+  1.Are there little ones at home? 
+  <br>
+  Then a dark toned sofa would be wiser choice.
+  <br>
+  2.What’s the weather like where you live?
+  <br>
+  For an all-year humid weather like Mumbai, leather may not be a great idea, whereas for a blessed weather like Bengaluru, it works just fine!
+  <br>
+  3.What’s your home style?
+  <br>
+  If you have a laidback ambience, a recliner would be a good fit.
+  <br>
+  4.What is your room’s colour scheme like?
+  <br>
+  If bright and chirpy is your thing, maybe a contrasting neutral piece would be right for you.
+</p>
+<h2>Buying Guide for Bed</h2>
+<p>
+  Selecting the right furniture begins with asking the right questions.
+  <br><br>
+  1.What do you need it for?
+  <br>
+  2.What purpose or whim  is it going to fulfil?
+  <br>
+  3.Do you want it to be fully functional and utilitarian?
+  <br>
+  4.Which space in your home is it going to occupy?
+  <br>
+  5.Are you looking for something more?
+</p>
+<h2>Buying Guide for Cabinet </h2>
+<p>Based on your needs, just make sure that you measure once, measure twice 
+  and be doubly sure that you have space available to place 
+  your new acquisition.
+</p>
+<h2>Buying Guide for Chair</h2>
+<p>
+  Begin with asking the right questions 
+  <br>
+  <br>
+  1. What do you need it for?
+  <br>
+  2. What purpose or whim is it going to fulfil?
+  <br>
+  3. Do you want it to be purely functional and utilitarian?
+  <br>
+  4. Are you buying it as a general seating option or for a particular individual?
+  <br>
+  5. Which space in your home is it going to occupy?
+  <br>
+  6. Does it suit the style of your room?
+</p>
+<p>
+  Are you good to go?
+  <br>
+  <br>
+  Start by filling out the form below
+</p>
+
+<div class="wrapper">
+  <h2>Customize Your Furniture</h2>
+
+  <form [formGroup]="customizationForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput [formControl]="title" required />
+      <mat-error *ngIf="title.errors"
+        >Name should not be empty and should be 5 to 100 characters in
+        length</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input matInput [formControl]="description" required />
+      <mat-error *ngIf="description.errors"
+        >Description should not be empty and should be 10 to 255 characters in
+        length</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Length (in meters)</mat-label>
+      <input matInput [formControl]="length" required />
+      <mat-error *ngIf="length.errors"
+        >Length should not be empty, must be numbers ranging from 1 to
+        99</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Breadth (in meters)</mat-label>
+      <input matInput [formControl]="breadth" required />
+      <mat-error *ngIf="breadth.errors"
+        >Breadth should not be empty, must be numbers ranging from 1 to
+        99</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Height (in meters)</mat-label>
+      <input matInput [formControl]="height" required />
+      <mat-error *ngIf="height.errors"
+        >Height should not be empty, must be numbers ranging from 1 to
+        99</mat-error
+      >
+    </mat-form-field>
+  </form>
+
+  <button
+    class="submit-btn"
+    mat-stroked-button
+    color="primary"
+    [disabled]="!customizationForm.valid"
+    (click)="saveForm()"
+  >
+    Submit
+  </button>
+</div>

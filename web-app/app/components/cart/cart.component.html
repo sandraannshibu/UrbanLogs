@@ -1,0 +1,21 @@
+<div class="cart-wrap">
+  <div class="cart-header">
+    <h2 class="cart-header">Items in cart: {{ cartProducts.length }}</h2>
+    <button class="total-btn" mat-stroked-button>Total: ₹ {{ total }}</button>
+    <button
+      class="checkout-btn"
+      mat-raised-button
+      (click)="checkout()"
+      [disabled]="cartProducts.length == 0"
+    >
+      Checkout
+    </button>
+  </div>
+
+  <app-product
+    [isCart]="true"
+    class="cart-list"
+    [title]="''"
+    [products]="cartProducts"
+  ></app-product>
+</div>

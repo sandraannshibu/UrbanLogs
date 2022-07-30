@@ -1,0 +1,36 @@
+<div class="carousel">
+  <mat-carousel
+    *ngIf="slides.length > 0"
+    timings="250ms ease-in"
+    [autoplay]="true"
+    [interval]="2000"
+    color="primary"
+    maxWidth="auto"
+    [proportion]="25"
+    [slides]="slides.length"
+    [loop]="false"
+    [hideArrows]="false"
+    [hideIndicators]="false"
+    [useKeyboard]="false"
+    [useMouseWheel]="false"
+    orientation="ltr"
+  >
+    <mat-carousel-slide
+      #matCarouselSlide
+      *ngFor="let slide of slides; let i = index"
+      [image]="slide.image"
+      [hideOverlay]="false"
+    >
+      <div class="carousel-item">
+
+        <div class="carousel-item-btns">
+
+          <button mat-raised-button class="slide-btn add-cart-btn" (click)="handleCarouselClick(slide.id,slideActions.ADD_TO_CART)">Add to cart</button>
+          <button mat-raised-button class="slide-btn learn-more-btn" (click)="handleCarouselClick(slide.id,slideActions.LEARN_MORE)">Learn more</button>
+
+        </div>
+
+      </div>
+    </mat-carousel-slide>
+  </mat-carousel>
+</div>

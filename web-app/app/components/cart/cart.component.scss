@@ -1,0 +1,23 @@
+.cart-header {
+  display: flex;
+  align-items: center;
+  h2 {
+    flex-grow: 1;
+    font-size: 2rem;
+    color: #7c7c7c;
+    margin: 1rem;
+    margin-top: 1.5rem;
+  }
+  .total-btn {
+    height: 3rem;
+    margin: 0 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .checkout-btn{
+    height: 3rem;
+    background-color: #ffdb00;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}

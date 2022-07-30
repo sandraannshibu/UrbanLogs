@@ -1,0 +1,38 @@
+.search-wrap {
+  margin-top: 1rem;
+  .search-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    mat-form-field {
+      flex-grow: 1;
+    }
+    .price-filter {
+      width: 20%;
+      margin-left: 2rem;
+      display: flex;
+      flex-direction: column;
+      .price-text-wrap {
+        display: flex;
+        flex-direction: row;
+        p{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .min-price{
+            text-align: start;
+        }
+        .max-price{
+            text-align: end;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep .mat-form-field-wrapper {
+  margin-bottom: -1.25em;
+  padding: 0;
+  margin: 0;
+}

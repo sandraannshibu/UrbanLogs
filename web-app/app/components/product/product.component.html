@@ -1,0 +1,50 @@
+<div>
+  <h2 *ngIf="products.length > 0">
+    {{ title | titlecase }}
+  </h2>
+  <div class="product-list-wrapper">
+    <div class="product-wrapper-outter" *ngFor="let product of products">
+      <div class="product-wrapper" >
+        <div class="product-img-wrap" (click)="viewProduct(product.id)">
+          <img src="{{ product.images[0] }}" alt="Cover image" />
+          <p class="discount-view" *ngIf="product.discount > 0">
+            -{{ product.discount }}%
+          </p>
+        </div>
+        <p class="product-name" (click)="viewProduct(product.id)">
+          {{ product.title | titlecase }}
+        </p>
+        <p
+          class="product-price"
+          *ngIf="product.discount == 0"
+          (click)="viewProduct(product.id)"
+        >
+          ₹ {{ product.price }}
+        </p>
+        <p
+          class="product-price"
+          *ngIf="product.discount > 0"
+          (click)="viewProduct(product.id)"
+        >
+          Old : ₹ {{ product.price }}
+        </p>
+        <p
+          class="product-price"
+          *ngIf="product.discount > 0"
+          (click)="viewProduct(product.id)"
+        >
+          New: ₹ {{ product.price - (product.discount / 100) * product.price }}
+        </p>
+        <button
+          class="remove-btn"
+          mat-stroked-button
+          color="warn"
+          *ngIf="isCart"
+          (click)="remove(product.id)"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

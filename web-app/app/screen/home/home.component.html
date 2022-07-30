@@ -1,0 +1,26 @@
+<div class="home-wrapper">
+  <app-toolbar
+    [navCollection]="homeNavigationCollection"
+    [navIcons]="homeNavigationIcons"
+    (navEventEmitter)="handleNavigationEvents($event)"
+  >
+  </app-toolbar>
+
+  <div class="home-body">
+    <router-outlet> </router-outlet>
+  </div>
+  <div class="footer">
+    <ul class="icon-footer">
+      <li><img src="assets/linkedin.png" /></li>
+      <li><img src="assets/facebook.png" /></li>
+      <li><img src="assets/instagram.png" /></li>
+    </ul>
+    <div class="new-footer">
+      <ul>
+        <li><a href="http://localhost:4200/customize">Customization</a></li>
+        <li><a href="http://localhost:4200/contact">About Us</a></li>
+
+      </ul>
+    </div>
+  </div>
+</div>

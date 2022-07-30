@@ -1,0 +1,6 @@
+<div class="home-body-wrapper">
+    <app-carousel (carouselEmitter)="handleCarouselClick($event)">
+    </app-carousel>
+    <app-product class="new-arrivals" [title]="'New arrivals'" [products]="latestProducts"></app-product>
+    <app-product class="new-arrivals" [title]="'Todays deals'" [products]="todaysDeal"></app-product>
+</div>

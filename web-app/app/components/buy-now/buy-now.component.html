@@ -1,0 +1,35 @@
+<div class="buy-now-wrap">
+  <h2>Checking Out</h2>
+  <table>
+    <thead>
+      <th>Title</th>
+      <th>Price</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products">
+        <td>{{ p.title }}</td>
+
+        <td>
+          ₹
+          {{
+            p.discount > 0 ? p.price - (p.price * p.discount) / 100 : p.price
+          }}
+        </td>
+      </tr>
+      <tr class="total-view">
+        <td>Total</td>
+        <td>₹ {{ total }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Pay via</h4>
+  <div class="payment-methods">
+    <button mat-stroked-button color="primary">UPI</button>
+    <button mat-stroked-button color="primary">Debit/Credit Card</button>
+    <button mat-stroked-button color="primary">Internet Banking</button>
+    <button mat-stroked-button color="primary">Cash On Delivery</button>
+  </div>
+
+  <button class="cancel-btn" mat-stroked-button color="warn" (click)="close()">Cancel</button>
+</div>

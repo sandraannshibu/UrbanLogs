@@ -1,0 +1,133 @@
+.product-list-wrapper {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  .product-wrapper-outter {
+    padding: 0.5rem 1rem;
+  }
+  .product-wrapper {
+    border-radius: 5rem;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    transition: box-shadow 0.3s;
+    transition: background-color 0.3s;
+    img {
+      align-self: center;
+      flex-grow: 1;
+      border-radius: 1rem 1rem 1rem 1rem;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      max-width: 300px;
+      padding: 0 1rem;
+    }
+    .product-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+    .product-price {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .product-wrapper:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    background-color: #f2f2f2;
+    cursor: pointer;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  color: #7c7c7c;
+  margin: 1rem;
+  margin-top: 1.5rem;
+}
+
+.remove-btn{
+  margin-top: 1rem;
+  z-index: 10;
+}
+
+@media only screen and (max-width: 1200px) {
+  .product-list-wrapper {
+    grid-template-columns: 25% 25% 25% 25%;
+    .product-wrapper {
+      .product-name {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 0.25rem;
+      }
+      .product-price {
+        margin-top: 0.25rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .product-list-wrapper {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    .product-wrapper {
+      .product-name {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 0.25rem;
+      }
+      .product-price {
+        margin-top: 0.25rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .product-list-wrapper {
+    grid-template-columns: 50% 50%;
+    .product-wrapper {
+      .product-name {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 0.25rem;
+      }
+      .product-price {
+        margin-top: 0.25rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .product-list-wrapper {
+    grid-template-columns: 100%;
+    .product-wrapper {
+      .product-name {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 0.25rem;
+      }
+      .product-price {
+        margin-top: 0.25rem;
+      }
+    }
+  }
+}
+
+.product-img-wrap {
+  position: relative;
+}
+
+.discount-view {
+  float: right;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  text-align: center;
+  z-index: 1000;
+  background-color: #ffdb00;
+}

@@ -1,0 +1,56 @@
+<div class="product-wrap">
+  <div class="product-carousel">
+    <mat-carousel
+      *ngIf="product.images.length > 0"
+      timings="250ms ease-in"
+      [autoplay]="true"
+      [interval]="2000"
+      color="primary"
+      maxWidth="auto"
+      [proportion]="100"
+      [slides]="product.images.length"
+      [loop]="false"
+      [hideArrows]="false"
+      [hideIndicators]="false"
+      [useKeyboard]="false"
+      [useMouseWheel]="false"
+      orientation="ltr"
+    >
+      <mat-carousel-slide
+        #matCarouselSlide
+        *ngFor="let image of product.images; let i = index"
+        [image]="image"
+        [hideOverlay]="false"
+      >
+      </mat-carousel-slide>
+    </mat-carousel>
+  </div>
+  <div class="product-details">
+    <h2 class="title">
+      {{ product.title }}
+    </h2>
+    <h2 class="price">₹ {{ product.price }}</h2>
+
+    <div class="product-btns">
+      <button mat-raised-button class="product-btn add-cart-btn" (click)="addToCart(product.id)">
+        Add to cart
+      </button>
+      <button mat-raised-button class="product-btn buy-now-btn" (click)="checkout(product)">Buy now</button>
+      <button mat-raised-button class="product-btn ar-btn" *ngIf="false">
+        View in AR
+      </button>
+    </div>
+  </div>
+  <div class="product-qr">
+    <h2>View in AR</h2>
+    <h3>Use your iphone to experience AR</h3>
+    <ngx-qrcode
+      [elementType]="elementType"
+      [errorCorrectionLevel]="correctionLevel"
+      [value]="value"
+      [width]="300"
+      cssClass="qrcodeshadow"
+    ></ngx-qrcode>
+  </div>
+</div>
+

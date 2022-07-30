@@ -1,0 +1,47 @@
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+td {
+  padding: 0.4rem;
+}
+
+.total-view {
+  td {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
+
+.buy-now-wrap {
+  padding: 3rem 2rem;
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  button {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  margin-bottom: 0.5rem;
+}
+
+.cancel-btn {
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
